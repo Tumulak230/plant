@@ -1,0 +1,52 @@
+﻿
+ 
+        
+        .avatar-container {
+            position: relative;
+        }
+
+            .avatar-container .avatar {
+                margin-bottom: 10px;
+            }
+
+        
+
+        .password-input {
+            position: relative;
+        }
+
+            .password-input input {
+                padding-right: 40px; /* Adjusted padding for eye icon */
+            }
+
+        .edit-section {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+            .edit-section .btn-group button {
+                margin-right: 10px;
+            }
+
+        /* Adjusted style for Featured Plants Section */
+        .featured-plants .card {
+            margin-bottom: 20px;
+        }
+
+            .featured-plants .card img {
+                height: 100px;
+                object-fit: cover; /* Ensure the image covers the entire box */
+            }
+
+            .featured-plants .card .rating {
+                margin-top: 10px;
+                text-align: center;
+            }
+
+                .featured-plants .card .rating > label {
+                    color: #ffd700; /* Changed color to yellow */
+                }
+
+       

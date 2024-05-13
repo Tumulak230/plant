@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Plant Shop</title>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/_layoutshop.css" />
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Plant Shop</a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <span class="navbar-text ml-auto">Welcome, @User.Identity.Name!</span>
+            }
+            else
+            {
+                <span class="navbar-text ml-auto">Welcome, GUEST!</span>
+            }
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+
+                    
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            @if (User.IsInRole("Seller"))
+                            {
+                                <a class="nav-link" href="~/Home/ResellerProfile">Profile</a>
+                            }
+                            else if (User.IsInRole("Buyer"))
+                            {
+                                <a class="nav-link" href="~/Home/UserProfile">Profile</a>
+                            }
+                            else 
+                            {
+                                <a class="nav-link" href="#"></a>
+                            }
+                        </li>
+                        
+                        <li class="nav-item">
+                            <form action="@Url.Action("Logout", "Home")" method="post" class="form-inline">
+                                <button type="submit" class="btn btn-link nav-link">Logout</button>
+                            </form>
+                        </li>
+                        <li>
+                            @if (User.IsInRole("Buyer"))
+                            {
+                                <a class="nav-link" href="~/Home/ViewCart">View Cart</a>
+                            }
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Home/Login">Login</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @*<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>*@
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿    body {
+            background-color: #ffffff; /* Set background color to white */
+        }
+
+        .upper-layout {
+            background-color: #28a745; /* Dark green upper layout */
+            color: #fff; /* Text color */
+        }
+
+        footer.footer {
+            background-color: #28a745; /* Dark green footer */
+            color: #fff; /* Text color */
+        }
+
+        .services-section {
+            background-color: #ffffff; /* Set background color of services section to white */
+        }
+
+        .btn-primary {
+            background-color: #28a745; /* Dark green button */
+            border-color: #28a745; /* Dark green border */
+        }
+
+        .perfect-plant-section {
+            background-color: #1e7e34; /* Dark green background for "Find Your Perfect Plant" section */
+            color: #fff; /* Text color */
+            padding: 20px; /* Adjust padding as needed */
+        }
+
+        .hero-section {
+            background-image: url('../Resors/plantshop.png'); /* Add the path to your image */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff; /* Text color */
+            text-align: center;
+            padding: 100px 0; /* Adjust as needed */
+        }
+
+            .hero-section h1 {
+                font-size: 3rem; /* Adjust font size as needed */
